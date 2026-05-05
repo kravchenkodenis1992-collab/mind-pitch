@@ -26,7 +26,8 @@
   );
   reveals.forEach((el) => revealObserver.observe(el));
 
-  // Smooth-scroll for in-page anchor links
+  // Smooth-scroll for in-page anchor links (honors prefers-reduced-motion)
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   document.addEventListener('click', (e) => {
     const link = e.target.closest('a[href^="#"]');
     if (!link) return;
@@ -35,6 +36,6 @@
     const target = document.getElementById(id);
     if (!target) return;
     e.preventDefault();
-    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    target.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' });
   });
 })();
