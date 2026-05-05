@@ -40,7 +40,7 @@ h1, h2, h3, h4, .section__title, .hero__wordmark { line-height: var(--line-tight
   padding: 0 var(--gutter);
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 35px;
 }
 .section__header {
   display: flex;
