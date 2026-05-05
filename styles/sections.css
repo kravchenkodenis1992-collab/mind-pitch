@@ -5,7 +5,7 @@
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(10, 18, 36, 0.85);
+  background: rgba(10, 18, 36, 0.92);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--c-divider);
@@ -482,6 +482,8 @@ body.is-scrolled .site-header {
 }
 
 /* ------- Section 11: Contact (#contact) ------- */
+/* Center-align the entire contact section: title + subtitle + card */
+#contact .section__inner { align-items: center; text-align: center; }
 .contact__card {
   max-width: 560px;
   margin: 0 auto;
