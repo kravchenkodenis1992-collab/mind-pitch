@@ -224,6 +224,8 @@ body.is-scrolled .site-header {
 }
 
 /* ------- Section 5: Loop (#loop) ------- */
+/* Narrow inner container so title and diagram align (diagram is max-width: 900px) */
+#loop .section__inner { max-width: 900px; }
 .loop__grid {
   display: grid;
   grid-template-columns: 1fr 60px 1fr;
@@ -416,10 +418,9 @@ body.is-scrolled .site-header {
   position: relative;
   max-width: 900px;
   margin: 0 auto;
-  height: 520px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 160px 160px 160px;
   grid-template-areas:
     ".      top    ."
     "left   center right"
@@ -460,8 +461,8 @@ body.is-scrolled .site-header {
   background: var(--c-accent-teal);
   color: var(--c-bg-base);
   border-radius: 50%;
-  width: 200px;
-  height: 200px;
+  width: 160px;
+  height: 160px;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -552,16 +553,15 @@ body.is-scrolled .site-header {
       "arrow-right"
       "card2"
       "arrow-down"
+      "center"
+      "arrow-up"
       "card3"
       "arrow-left"
-      "card4"
-      "arrow-up"
-      "center";
+      "card4";
   }
-  .loop__arrow--right::before, .loop__arrow--left::before { content: '↓'; }
-  .loop__arrow--right, .loop__arrow--left { font-size: 0; }
-  .loop__arrow--right::before, .loop__arrow--left::before { font-size: 1.5rem; }
-  .loop__arrow--up, .loop__arrow--down { font-size: 0; }
+  /* All 4 arrow slots show ↓ on mobile (hide original arrow chars, use ::before with ↓) */
+  .loop__arrow { font-size: 0; }
+  .loop__arrow::before { content: '↓'; font-size: 1.5rem; }
   .vision__diagram {
     height: auto;
     grid-template-columns: 1fr;

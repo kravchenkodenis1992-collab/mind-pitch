@@ -139,20 +139,21 @@ h1, h2, h3, h4, .section__title, .hero__wordmark { line-height: var(--line-tight
   color: var(--c-accent-teal);
 }
 
-/* Reveal animation defaults (overridden by .is-visible from main.js) */
-.reveal {
+/* Reveal animation defaults — scoped to .js-ready so non-JS environments show content.
+   main.js adds 'js-ready' class to <html> before observers fire. */
+.js-ready .reveal {
   opacity: 0;
   transform: translateY(16px);
   transition: opacity 400ms ease, transform 400ms ease;
 }
-.reveal.is-visible {
+.js-ready .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .reveal, .reveal.is-visible {
+  .js-ready .reveal, .js-ready .reveal.is-visible {
     opacity: 1;
     transform: none;
     transition: none;

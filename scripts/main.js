@@ -1,4 +1,8 @@
 (() => {
+  // Mark as JS-ready so .reveal animations engage. Without this, all sections stay opacity:1
+  // (graceful fallback if JS is disabled or fails before observers fire).
+  document.documentElement.classList.add('js-ready');
+
   // Sticky header: reveal once hero is past the viewport top
   const hero = document.getElementById('hero');
   if (hero) {
