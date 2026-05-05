@@ -1,0 +1,31 @@
+:root {
+  /* Color */
+  --c-bg-base:        #0A1224;
+  --c-bg-card:        #1A2138;
+  --c-bg-card-hover:  #232C46;
+  --c-text-strong:    #FFFFFF;
+  --c-text-body:      #CBD5E1;
+  --c-text-muted:     #94A3B8;
+  --c-accent-teal:    #2DD4BF;
+  --c-accent-purple:  #A78BFA;
+  --c-accent-blue:    #60A5FA;
+  --c-accent-orange:  #FBBF24;
+  --c-accent-red:     #F87171;
+  --c-divider:        rgba(148, 163, 184, 0.15);
+
+  /* Typography */
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --line-tight: calc(1em + 1px);
+  --line-relaxed: 1.5;
+
+  /* Spacing */
+  --space-section:   clamp(64px, 8vw, 128px);
+  --space-block:     clamp(32px, 4vw, 64px);
+  --space-card-pad:  clamp(20px, 2vw, 32px);
+  --max-content:     1100px;
+  --gutter:          clamp(20px, 4vw, 40px);
+
+  /* Radii / motion */
+  --radius-card: 12px;
+  --transition-card: background-color 150ms ease;
+}

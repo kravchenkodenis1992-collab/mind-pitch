@@ -1,0 +1,149 @@
+/* Reset */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+img, svg { max-width: 100%; display: block; }
+button { font: inherit; color: inherit; }
+ul, ol { padding: 0; margin: 0; list-style: none; }
+h1, h2, h3, h4, p { margin: 0; }
+
+/* Base typography */
+html {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body {
+  background: var(--c-bg-base);
+  color: var(--c-text-body);
+  line-height: var(--line-relaxed);
+  min-height: 100vh;
+}
+a { color: var(--c-accent-teal); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Tight line-height for all text-like elements (matches main app convention) */
+h1, h2, h3, h4, .section__title, .hero__wordmark { line-height: var(--line-tight); }
+
+/* Section container */
+.section { padding: var(--space-section) 0; }
+.section__inner {
+  max-width: var(--max-content);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+.section__title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--c-text-strong);
+  margin-bottom: 8px;
+}
+.section__subtitle {
+  font-size: 1rem;
+  color: var(--c-text-muted);
+  margin-bottom: var(--space-block);
+}
+
+/* Layout primitives */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-block); }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: stretch; }
+.grid-2x2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+
+/* Card primitive */
+.card {
+  background: var(--c-bg-card);
+  border-radius: var(--radius-card);
+  padding: var(--space-card-pad);
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition-card);
+}
+.card:hover { background: var(--c-bg-card-hover); }
+.card__stripe {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: var(--c-accent-teal);
+}
+.card--purple .card__stripe { background: var(--c-accent-purple); }
+.card--blue   .card__stripe { background: var(--c-accent-blue);   }
+.card--orange .card__stripe { background: var(--c-accent-orange); }
+.card--red    .card__stripe { background: var(--c-accent-red);    }
+
+.card__label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  color: var(--c-accent-teal);
+  margin-bottom: 12px;
+}
+.card--purple .card__label { color: var(--c-accent-purple); }
+.card--blue   .card__label { color: var(--c-accent-blue);   }
+.card--orange .card__label { color: var(--c-accent-orange); }
+.card--red    .card__label { color: var(--c-accent-red);    }
+
+.card__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--c-text-strong);
+  margin-bottom: 8px;
+}
+.card__text {
+  color: var(--c-text-body);
+  font-size: 0.9375rem;
+  margin-bottom: 16px;
+}
+.card__list { font-size: 0.875rem; color: var(--c-text-body); }
+.card__list li {
+  padding: 4px 0 4px 16px;
+  position: relative;
+}
+.card__list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--c-accent-teal);
+}
+.card--purple .card__list li::before { color: var(--c-accent-purple); }
+.card--blue   .card__list li::before { color: var(--c-accent-blue);   }
+.card--orange .card__list li::before { color: var(--c-accent-orange); }
+.card--red    .card__list li::before { color: var(--c-accent-red);    }
+
+/* Section caption (italic emphasis line at section bottom) */
+.section__caption {
+  margin-top: var(--space-block);
+  text-align: center;
+  font-style: italic;
+  color: var(--c-text-muted);
+  font-size: 0.9375rem;
+}
+.section__caption--strong {
+  color: var(--c-text-body);
+  font-style: normal;
+  font-weight: 600;
+}
+.section__caption-emph {
+  color: var(--c-accent-teal);
+}
+
+/* Reveal animation defaults (overridden by .is-visible from main.js) */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 400ms ease, transform 400ms ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  * { scroll-behavior: auto !important; }
+}
