@@ -197,3 +197,115 @@ body.is-scrolled .site-header {
   font-size: 1.5rem;
   color: var(--c-text-muted);
 }
+
+/* ------- Section 5: Loop (#loop) ------- */
+.loop__grid {
+  display: grid;
+  grid-template-columns: 1fr 60px 1fr;
+  grid-template-rows: 1fr 60px 1fr;
+  grid-template-areas:
+    "card1 arrow-right card2"
+    "arrow-up center  arrow-down"
+    "card4 arrow-left card3";
+  gap: 16px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.loop__card {
+  background: var(--c-bg-card);
+  border-radius: var(--radius-card);
+  padding: 24px;
+  border: 1.5px solid;
+}
+.loop__card--red    { border-color: var(--c-accent-red);    grid-area: card1; }
+.loop__card--orange { border-color: var(--c-accent-orange); grid-area: card2; }
+.loop__card--teal   { border-color: var(--c-accent-teal);   grid-area: card3; }
+.loop__card--blue   { border-color: var(--c-accent-blue);   grid-area: card4; }
+.loop__card--red    .card__label { color: var(--c-accent-red); }
+.loop__card--orange .card__label { color: var(--c-accent-orange); }
+.loop__card--teal   .card__label { color: var(--c-accent-teal); }
+.loop__card--blue   .card__label { color: var(--c-accent-blue); }
+
+.loop__arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--c-text-muted);
+}
+.loop__arrow--right { grid-area: arrow-right; }
+.loop__arrow--down  { grid-area: arrow-down; }
+.loop__arrow--left  { grid-area: arrow-left; }
+.loop__arrow--up    { grid-area: arrow-up; }
+
+.loop__center {
+  grid-area: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.loop__center-label {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--c-accent-teal);
+  letter-spacing: 0.05em;
+}
+.loop__center-sub {
+  font-size: 0.75rem;
+  color: var(--c-text-muted);
+  margin-top: 4px;
+}
+
+/* ------- Section 6: Why Now / Why Us (#why) ------- */
+.why__list { margin: 0; }
+.why__list dt {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--c-accent-orange);
+  margin-top: 14px;
+}
+.card .why__list dt { color: var(--c-accent-teal); }
+.card--orange .why__list dt { color: var(--c-accent-orange); }
+.why__list dt:first-child { margin-top: 0; }
+.why__list dd {
+  margin: 4px 0 0;
+  font-size: 0.875rem;
+  color: var(--c-text-body);
+  line-height: 1.5;
+}
+.why__footer {
+  margin-top: var(--space-block);
+  padding: 20px 24px;
+  background: rgba(45, 212, 191, 0.06);
+  border-left: 3px solid var(--c-accent-teal);
+  border-radius: 4px;
+  text-align: center;
+}
+.why__footer strong {
+  display: block;
+  color: var(--c-text-strong);
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+.why__footer span {
+  color: var(--c-text-muted);
+  font-size: 0.875rem;
+}
+
+/* ------- Section 7: Market (#market) ------- */
+.market__big {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 800;
+  line-height: var(--line-tight);
+  margin-bottom: 12px;
+}
+.market__label {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-text-strong);
+  margin-bottom: 6px;
+}
