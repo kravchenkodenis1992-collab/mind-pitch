@@ -22,6 +22,13 @@ body {
 a { color: var(--c-accent-teal); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
+/* Keyboard focus indicator (a11y) */
+:focus-visible {
+  outline: 2px solid var(--c-accent-teal);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
 /* Tight line-height for all text-like elements (matches main app convention) */
 h1, h2, h3, h4, .section__title, .hero__wordmark { line-height: var(--line-tight); }
 
