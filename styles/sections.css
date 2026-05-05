@@ -63,9 +63,8 @@ body.is-scrolled .site-header {
   grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: var(--space-block);
-  flex: 1;
   padding-top: 80px;
-  padding-bottom: 40px;
+  padding-bottom: 80px;
 }
 .hero__left {
   display: flex;
@@ -110,15 +109,41 @@ body.is-scrolled .site-header {
   max-width: 520px;
   opacity: 0.85;
 }
-.hero__footer {
-  max-width: var(--max-content);
-  margin: 0 auto;
-  padding: 0 var(--gutter) 32px;
-  width: 100%;
+.hero__actions {
   display: flex;
-  justify-content: space-between;
-  font-size: 0.8125rem;
+  gap: 16px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+.hero__cta {
+  display: inline-flex;
+  align-items: center;
+  background: var(--c-accent-teal);
+  color: var(--c-bg-base);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  padding: 12px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: transform 150ms ease, opacity 150ms ease;
+}
+.hero__cta:hover {
+  transform: translateY(-1px);
+  opacity: 0.9;
+  text-decoration: none;
+}
+.hero__cta-secondary {
+  display: inline-flex;
+  align-items: center;
   color: var(--c-text-muted);
+  font-weight: 500;
+  font-size: 0.9375rem;
+  padding: 12px 4px;
+  text-decoration: none;
+}
+.hero__cta-secondary:hover {
+  color: var(--c-accent-teal);
+  text-decoration: none;
 }
 
 /* ------- Section 2: Problem (#problem) ------- */
@@ -557,6 +582,7 @@ body.is-scrolled .site-header {
 
 @media (max-width: 540px) {
   .site-header__cta { font-size: 0.8125rem; }
-  .hero__footer { flex-direction: column; gap: 4px; align-items: flex-start; }
+  .hero__actions { gap: 12px; }
+  .hero__cta, .hero__cta-secondary { width: 100%; justify-content: center; }
   .why__footer { padding: 16px; }
 }
