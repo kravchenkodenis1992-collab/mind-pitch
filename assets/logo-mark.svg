@@ -1,21 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 90" fill="none" stroke-width="1.5">
-  <!-- Pentagonal 5-node graph: top, upper-right, upper-left, lower-right, lower-left -->
-  <g stroke="#2DD4BF" opacity="0.7">
-    <line x1="50" y1="10" x2="85" y2="35"/>
-    <line x1="50" y1="10" x2="15" y2="35"/>
-    <line x1="50" y1="10" x2="70" y2="80"/>
-    <line x1="50" y1="10" x2="30" y2="80"/>
-    <line x1="85" y1="35" x2="15" y2="35"/>
-    <line x1="85" y1="35" x2="70" y2="80"/>
-    <line x1="85" y1="35" x2="30" y2="80"/>
-    <line x1="15" y1="35" x2="70" y2="80"/>
-    <line x1="15" y1="35" x2="30" y2="80"/>
-    <line x1="70" y1="80" x2="30" y2="80"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 90" fill="none">
+  <!-- Asymmetric knowledge tree: root teal node branches to 2 mid-level blue nodes,
+       which branch to 2 leaf purple nodes. Suggests cognitive hierarchy, not symmetric star. -->
+  <g stroke="#2DD4BF" opacity="0.7" stroke-width="1.5" stroke-linecap="round">
+    <line x1="50" y1="15" x2="22" y2="45"/>
+    <line x1="50" y1="15" x2="78" y2="45"/>
+    <line x1="22" y1="45" x2="38" y2="78"/>
+    <line x1="78" y1="45" x2="38" y2="78"/>
+    <line x1="78" y1="45" x2="80" y2="78"/>
   </g>
-  <!-- Nodes -->
-  <circle cx="50" cy="10" r="5.5" fill="#2DD4BF"/>
-  <circle cx="85" cy="35" r="5.5" fill="#60A5FA"/>
-  <circle cx="15" cy="35" r="5.5" fill="#60A5FA"/>
-  <circle cx="70" cy="80" r="5.5" fill="#A78BFA"/>
-  <circle cx="30" cy="80" r="5.5" fill="#A78BFA"/>
+  <circle cx="50" cy="15" r="6"   fill="#2DD4BF"/>
+  <circle cx="22" cy="45" r="5"   fill="#60A5FA"/>
+  <circle cx="78" cy="45" r="5"   fill="#60A5FA"/>
+  <circle cx="38" cy="78" r="4.5" fill="#A78BFA"/>
+  <circle cx="80" cy="78" r="4.5" fill="#A78BFA"/>
 </svg>

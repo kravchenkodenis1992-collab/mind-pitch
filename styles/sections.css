@@ -436,7 +436,17 @@ body.is-scrolled .site-header {
     "bl     .      br";
   gap: 24px;
 }
+.vision__lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
 .vision__card {
+  position: relative;
+  z-index: 1;
   background: var(--c-bg-card);
   border: 1px solid;
   border-radius: 8px;
@@ -467,12 +477,15 @@ body.is-scrolled .site-header {
 .vision__card--bl h3    { color: var(--c-accent-orange); }
 .vision__center {
   grid-area: center;
+  position: relative;
+  z-index: 1;
   background: var(--c-accent-teal);
   color: var(--c-bg-base);
   border-radius: 50%;
-  width: 160px;
-  height: 160px;
-  margin: auto;
+  width: 140px;
+  height: 140px;
+  align-self: end;
+  justify-self: center;
   display: flex;
   flex-direction: column;
   align-items: center;
