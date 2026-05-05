@@ -32,23 +32,29 @@ a:hover { text-decoration: underline; }
 /* Tight line-height for all text-like elements (matches main app convention) */
 h1, h2, h3, h4, .section__title, .hero__wordmark { line-height: var(--line-tight); }
 
-/* Section container */
+/* Section container — flex+gap layout (no margin-based spacing) */
 .section { padding: var(--space-section) 0; }
 .section__inner {
   max-width: var(--max-content);
   margin: 0 auto;
   padding: 0 var(--gutter);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.section__header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 .section__title {
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
   color: var(--c-text-strong);
-  margin-bottom: 8px;
 }
 .section__subtitle {
   font-size: 1rem;
   color: var(--c-text-muted);
-  margin-bottom: var(--space-block);
 }
 
 /* Layout primitives */
@@ -119,7 +125,6 @@ h1, h2, h3, h4, .section__title, .hero__wordmark { line-height: var(--line-tight
 
 /* Section caption (italic emphasis line at section bottom) */
 .section__caption {
-  margin-top: var(--space-block);
   text-align: center;
   font-style: italic;
   color: var(--c-text-muted);
