@@ -120,3 +120,80 @@ body.is-scrolled .site-header {
   font-size: 0.8125rem;
   color: var(--c-text-muted);
 }
+
+/* ------- Section 2: Problem (#problem) ------- */
+.problem__grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: var(--space-block);
+  align-items: center;
+}
+.problem__points {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.problem__point {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 16px;
+  align-items: start;
+}
+.problem__num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--c-accent-teal);
+  font-variant-numeric: tabular-nums;
+}
+.problem__lead {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--c-text-strong);
+  line-height: var(--line-tight);
+}
+.problem__sub {
+  margin-top: 6px;
+  color: var(--c-text-muted);
+  font-size: 0.9375rem;
+}
+
+.layer-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.layer-stack__item {
+  padding: 16px 20px;
+  border-radius: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--c-text-strong);
+}
+.layer-stack__item--purple { background: rgba(167, 139, 250, 0.18); color: #C7B6FB; border: 1px solid rgba(167, 139, 250, 0.3); }
+.layer-stack__item--blue   { background: rgba(96, 165, 250, 0.18);  color: #93C5FD; border: 1px solid rgba(96, 165, 250, 0.3); }
+.layer-stack__item--teal   { background: rgba(45, 212, 191, 0.18);  color: #67E8D9; border: 1px solid rgba(45, 212, 191, 0.3); }
+.layer-stack__item--orange { background: transparent;               color: #FBBF24; border: 1px solid #FBBF24; }
+.layer-stack__item--red    { background: transparent;               color: #F87171; border: 1px solid #F87171; }
+.layer-stack__crack {
+  width: 28px;
+  height: 28px;
+}
+
+/* ------- Section 3: Approach (#approach) ------- */
+.approach__grid {
+  display: grid;
+  grid-template-columns: 1fr 32px 1fr 32px 1fr;
+  gap: 16px;
+  align-items: stretch;
+}
+.approach__arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--c-text-muted);
+}
